@@ -28,8 +28,8 @@ class Front extends Controller
         $pager->set_total(Task::count());
 
         //Сортировка
-        $sort = $_GET['sort'] ?? 'id';
-        $sortOrder = $_GET['sortOrder'] ?? 'DESC';
+        $sort = isset($_GET['sort']) ? $_GET['sort'] : 'id';
+        $sort = isset($_GET['sortOrder']) ? $_GET['sortOrder'] : 'DESC';
 
         $tasks = Task::fetchAll($pager->get_limit_raw()[1], $pager->get_limit_raw()[0], $sort, $sortOrder);
         echo $this->render('front/index.php', [
