@@ -78,7 +78,7 @@ class Application
         }
 
         //Имя контролленра
-        $controllerName = "\\beejee\\controller\\" . $pathPieces[1];
+        $controllerName = "\\beejee\\controller\\" . ucfirst($pathPieces[1]);
 
         //Имя экшна
         $actionName = 'action' . ucfirst($pathPieces[2]);
