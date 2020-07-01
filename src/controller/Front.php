@@ -96,7 +96,7 @@ class Front extends Controller
     {
         $task->email = $_POST['email'];
         $task->username = $_POST['username'];
-        if ($task->description != $_POST['description'] && !$task->id) {
+        if ($task->description != $_POST['description'] && $task->id) {
             $task->edited = true;
         }
         $task->description = $_POST['description'];
