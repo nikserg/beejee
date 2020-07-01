@@ -1,5 +1,12 @@
 {
+
+    "autoload": {
+        "psr-4": {
+            "beejee\\": "src"
+        }
+    },
     "require": {
-        "catfan/medoo": "^1.7"
+        "catfan/medoo": "^1.7",
+        "voku/pagination": "^4.0"
     }
 }
