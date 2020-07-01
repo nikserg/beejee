@@ -90,12 +90,13 @@ class Front extends Controller
      *
      * @param Task $task
      * @return bool|\PDOStatement
+     * @throws \Exception
      */
     private function processModel(Task $task)
     {
         $task->email = $_POST['email'];
         $task->username = $_POST['username'];
-        if ($task->description != $_POST['description']) {
+        if ($task->description != $_POST['description'] && !$task->id) {
             $task->edited = true;
         }
         $task->description = $_POST['description'];
