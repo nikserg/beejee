@@ -29,7 +29,7 @@ class Front extends Controller
 
         //Сортировка
         $sort = isset($_GET['sort']) ? $_GET['sort'] : 'id';
-        $sort = isset($_GET['sortOrder']) ? $_GET['sortOrder'] : 'DESC';
+        $sortOrder = isset($_GET['sortOrder']) ? $_GET['sortOrder'] : 'DESC';
 
         $tasks = Task::fetchAll($pager->get_limit_raw()[1], $pager->get_limit_raw()[0], $sort, $sortOrder);
         echo $this->render('front/index.php', [
