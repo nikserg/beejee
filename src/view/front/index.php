@@ -21,6 +21,15 @@
     </div>
 </div>
 <?php
+if (empty($tasks)) {
+    ?>
+    <div class="row">
+        <div class="col">
+            <p>Список задач пуст</p>
+        </div>
+    </div>
+    <?php
+}
 foreach ($tasks as $task) {
     ?>
     <div class="row">
@@ -31,7 +40,8 @@ foreach ($tasks as $task) {
                     <h5 class="card-title">
                         Задача <?php echo $task->id; ?>
                         <?php if ($task->done) { ?><span class="badge badge-success">Выполнена</span><?php } ?>
-                        <?php if ($task->edited) { ?><span class="badge badge-info">Отредактировано администратором</span><?php } ?>
+                        <?php if ($task->edited) { ?><span
+                                class="badge badge-info">Отредактировано администратором</span><?php } ?>
                     </h5>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlentities($task->email) ?></h6>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo htmlentities($task->username) ?></h6>
